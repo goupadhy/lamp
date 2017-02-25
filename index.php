@@ -75,7 +75,7 @@ $contacts = $db->all();
             </tbody>
         </table>
 <div class="panel panel-primary">
-      <div class="panel-heading">Panel with panel-primary class</div>
+      <div class="panel-heading">Enter Customer Details</div>
       <div class="panel-body">
     
         <div class="text-left">
