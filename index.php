@@ -16,7 +16,7 @@ $contacts = $db->all();
 
 <html>
 <head>
-    <title>PHP-Apache-Mysql-Sample 示例 - DaoCloud</title>
+    <title>Sample Application with ECS and RDS</title>
 
     <link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
 
@@ -47,16 +47,16 @@ $contacts = $db->all();
 <div class="container">
     <div class="content">
         <h1>
-            PHP-Apache-Mysql-Sample 
+            Sample Application with ECS and RDS 
         </h1>
         <table class="table">
-            <caption>Contacts</caption>
+            <caption>Contacts Book</caption>
             <thead>
             <tr>
                 <th>#</th>
                 <th>Name</th>
                 <th>Phone</th>
-                <th>Operate</th>
+                <th>Operation</th>
             </tr>
             </thead>
             <tbody>
@@ -75,6 +75,10 @@ $contacts = $db->all();
             </tbody>
         </table>
 
+<div class="panel panel-primary">
+      <div class="panel-heading">Save Customer Contact</div>
+      <div class="panel-body">
+   
         <div class="text-left">
             <form method="post">
                 <div class="form-group">
@@ -85,9 +89,11 @@ $contacts = $db->all();
                     <label for="phone">Number</label>
                     <input type="text" name="phone" class="form-control" id="phone" placeholder="Number">
                 </div>
-                <button type="submit" class="btn btn-success">Add</button>
+                <button type="submit" class="btn btn-success">Add Contact</button>
             </form>
         </div>
+         </div>
+         </div>
     </div>
 </div>
 </body>
