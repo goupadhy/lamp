@@ -32,9 +32,9 @@ class DB
                 $this->pdo->exec($sql);
 
                 $sqlData = "
-        INSERT INTO `contacts` VALUES ('1', 'John', '188888888');
-        INSERT INTO `contacts` VALUES ('2', 'Bob', '166666666');
-        INSERT INTO `contacts` VALUES ('3', 'Zoe', '155555555');
+        INSERT INTO `contacts` VALUES ('1', 'Jack', '188888888');
+        INSERT INTO `contacts` VALUES ('2', 'Daniel', '166666666');
+        INSERT INTO `contacts` VALUES ('3', 'Christy', '155555555');
         ";
                 $this->pdo->exec($sqlData);
             }

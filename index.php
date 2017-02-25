@@ -47,7 +47,7 @@ $contacts = $db->all();
 <div class="container">
     <div class="content">
         <h1>
-           Ali Cloud Sample CRUD Application with ECS and RDS
+           AliBaba Cloud Sample CRUD Application with ECS and RDS
         </h1>
         <table class="table">
             <caption>Contacts Book</caption>
@@ -75,7 +75,7 @@ $contacts = $db->all();
             </tbody>
         </table>
 
-        <div class="text-left"> Enter Contact Details:
+        <div class="text-left"> Enter Contact Details: <br>
             <form method="post">
                 <div class="form-group">
                     <label for="name">Name</label>
