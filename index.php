@@ -78,7 +78,7 @@ $contacts = $db->all();
       <div class="panel-heading">Enter Customer Details</div>
       <div class="panel-body">
     
-        <div class="text-left">
+       
             <form method="post">
                 <div class="form-group">
                     <label for="name">Name</label>
@@ -90,7 +90,7 @@ $contacts = $db->all();
                 </div>
                 <button type="submit" class="btn btn-success">Add</button>
             </form>
-        </div>
+       
         </div>
 </div>
 
