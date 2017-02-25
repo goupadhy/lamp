@@ -47,7 +47,7 @@ $contacts = $db->all();
 <div class="container">
     <div class="content">
         <h1>
-           Ali Cloud Sample Application with ECS and RDS
+           Ali Cloud Sample CRUD Application with ECS and RDS
         </h1>
         <table class="table">
             <caption>Contacts</caption>
@@ -74,7 +74,10 @@ $contacts = $db->all();
             } ?>
             </tbody>
         </table>
-
+<div class="panel panel-primary">
+      <div class="panel-heading">Panel with panel-primary class</div>
+      <div class="panel-body">
+    
         <div class="text-left">
             <form method="post">
                 <div class="form-group">
@@ -88,6 +91,9 @@ $contacts = $db->all();
                 <button type="submit" class="btn btn-success">Add</button>
             </form>
         </div>
+        </div>
+</div>
+
     </div>
 </div>
 </body>
