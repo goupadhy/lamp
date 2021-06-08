@@ -1,0 +1,50 @@
+on: [push]
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    
+    - uses: azure/docker-login@v1
+      with:
+        login-server: acr2647.azurecr.io
+        username: ${{ secrets.acr_acr2647_username }}
+        password: ${{ secrets.acr_acr2647_password }}
+    
+    - name: Build and push image to ACR
+      id: build-image
+      run: |
+        docker build "$GITHUB_WORKSPACE/" -f  "Dockerfile" -t acr2647.azurecr.io/aksusernamecni:${{ github.sha }} --label dockerfile-path=Dockerfile
+        docker push acr2647.azurecr.io/aksusernamecni:${{ github.sha }}
+    
+    - uses: azure/k8s-set-context@v1
+      with:
+         kubeconfig: ${{ secrets.aks_aksusernamecni_kubeConfig }}
+      id: login
+    
+    - name: Create namespace
+      run: |
+        namespacePresent=`kubectl get namespace | grep aksusernamecniabbem | wc -l`
+        if [ $namespacePresent -eq 0 ]
+        then
+            echo `kubectl create namespace aksusernamecniabbem`
+        fi
+
+    - uses: azure/k8s-create-secret@v1
+      with:
+        namespace: aksusernamecniabbem
+        container-registry-url: acr2647.azurecr.io
+        container-registry-username: ${{ secrets.acr_acr2647_username }}
+        container-registry-password: ${{ secrets.acr_acr2647_password }}
+        secret-name: aksusernamecdockerauth
+       
+    - uses: azure/k8s-deploy@v1.2
+      with:
+        namespace: aksusernamecniabbem
+        manifests: |
+          manifests/deployment.yml
+          manifests/service.yml
+        images: |
+          acr2647.azurecr.io/aksusernamecni:${{ github.sha }}
+        imagepullsecrets: |
+          aksusernamecdockerauth
