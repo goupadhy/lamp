@@ -92,6 +92,6 @@ DaoCloud 使用图文介绍
 [DaoCloud 使用视频介绍](http://7u2psl.com2.z0.glb.qiniucdn.com/daocloud_small.mp4)
 
 
-### php-apache-mysql-sample 应用截图
+### php-apache-mysql-sample
 
 ![php-apache-mysql-sample](/php-apache-mysql.png "php-apache-mysql")
